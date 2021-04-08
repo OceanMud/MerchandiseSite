@@ -3,8 +3,8 @@ import "../styles/App.css";
 function App() {
   return (
     <div className="">
-      <div className="border-gray-100 border-b-2    ">
-        <div className="flex max-w-screen-2xl mx-auto py-4 md:px-6 xl:justify-between justify-between md:justify-around pr-5 bottom-1 text-gray-500">
+      <div className="border-gray-200 border-b      ">
+        <div className="flex max-w-screen-2xl mx-auto py-4 md:px-6  justify-between  pr-5 bottom-1 text-gray-500">
           <div className="flex pl-2  md:w-auto w-full  ">
             <div>
               <img
@@ -41,7 +41,7 @@ function App() {
             </div>
           </div>
           <div className=" text-sm flex items-center space-x-4 flex-shrink-0   ">
-            <a href="#" className=" group  ">
+            <a href="#" className=" group  flex items-center ">
               <img
                 src="images/world.svg"
                 className=" hidden  filter contrast-0  group-hover:contrast-100 md:inline-block w-5 
@@ -51,7 +51,7 @@ function App() {
                 Preferences
               </span>
             </a>
-            <a href="#" className="group ">
+            <a href="#" className="group  flex items-center ">
               <img
                 src="images/user.svg"
                 className="  filter contrast-0  group-hover:contrast-100  inline-block w-5   "
@@ -61,7 +61,7 @@ function App() {
                 Sign in
               </span>
             </a>
-            <a href="#" className="group">
+            <a href="#" className="group  flex items-center">
               <img
                 src="images/user-add.svg"
                 className="  filter contrast-0  group-hover:contrast-100 inline-block w-5  "
@@ -71,7 +71,7 @@ function App() {
                 Sign up
               </span>
             </a>
-            <a href="#">
+            <a href="# " className=" flex items-center">
               <img
                 src="images/cart.svg"
                 className="filter contrast-0   inline-block w-5  "
@@ -98,7 +98,7 @@ function App() {
                "
         />
       </div>
-      <div className="border-gray-100   md:border-b-2 py-1  ">
+      <div className="border-gray-200   md:border-b py-1  ">
         <div className="  max-w-screen-2xl mx-auto pl-12 pr-4 pb-4 space-x-5 text-sm mt-4   text-gray-500 hidden md:block">
           <a href="# " className="hover:text-gray-900 group">
             Products
