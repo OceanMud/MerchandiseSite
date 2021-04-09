@@ -1,6 +1,10 @@
+import React, { useState } from "react";
+
 import "../styles/App.css";
 
 function App() {
+  const [inHover, setInHover] = useState(-1);
+
   return (
     <div className="">
       <div className="border-gray-200 border-b      ">
@@ -145,138 +149,193 @@ function App() {
       </div>
 
       <div>
-        <div className="flex space-x-2 pt-4 pl-12 max-w-screen-2xl mx-auto text-sm   ">
-          <a
-            href="#"
-            className=" text-UrlBlue tracking-wide   hover:border-UrlBlue border-b border-transparent  "
-          >
-            Products
-          </a>
-          <span> / </span>
+        <div>
+          <div className=" flex space-x-2 pt-4 pl-12 max-w-screen-2xl mx-auto text-sm  pb-4  ">
+            <a
+              href="#"
+              className=" text-UrlBlue tracking-wide   hover:border-UrlBlue border-b border-transparent  "
+            >
+              Products
+            </a>
+            <span> / </span>
 
-          <a
-            href="#"
-            className=" text-UrlBlue tracking-wide hover:border-UrlBlue border-b border-transparent  "
-          >
-            Men's
-          </a>
+            <a
+              href="#"
+              className=" text-UrlBlue tracking-wide hover:border-UrlBlue border-b border-transparent  "
+            >
+              Men's
+            </a>
 
-          <span> / </span>
-          <a
-            href="#"
-            className=" text-UrlBlue tracking-wide hover:border-UrlBlue border-b border-transparent "
-          >
-            Shirts
-          </a>
-          <span> / </span>
-          <a
-            href="#"
-            className=" text-UrlBlue tracking-wide hover:border-UrlBlue border-b border-transparent "
-          >
-            T-Shirts
-          </a>
-          <span> / </span>
-          <span className="font-bold">
-            Unisex Basic Softstyle T-Shirt | Gildan 64000
-          </span>
-        </div>
-      </div>
-      <div>
-        <div className="flex justify-center items-center mt-10">
-          <h1 className=" text-2xl font-bold">
-            Unisex Basic Softstyle T-Shirt | Gildan 64000
-          </h1>
-        </div>
-
-        <div className="flex justify-center items-center mt-6">
-          <div>
-            <span className="text-gray-500 line-through text-xl">$54.00</span>
-            <span className="text-red-500 pl-2 text-xl">$40.50</span>
+            <span> / </span>
+            <a
+              href="#"
+              className=" text-UrlBlue tracking-wide hover:border-UrlBlue border-b border-transparent "
+            >
+              Shirts
+            </a>
+            <span> / </span>
+            <a
+              href="#"
+              className=" text-UrlBlue tracking-wide hover:border-UrlBlue border-b border-transparent whitespace-nowrap "
+            >
+              T-Shirts
+            </a>
+            <span> / </span>
+            <span className="font-bold truncate ">
+              Unisex Basic Softstyle T-Shirt | Gildan 64000
+            </span>
           </div>
         </div>
 
-        <div className=" flex justify-center space-x-2 mt-4 items-center  ">
-          <img src="images/star.svg" className=" h-4  " />
-          <img src="images/star.svg" className="h-4 " />
-          <img src="images/star.svg" className=" h-4" />
-          <img src="images/star.svg" className=" h-4" />
-          <img src="images/star.svg" className=" h-4" />
-          <a
-            href="#"
-            className="text-UrlBlue hover:border-UrlBlue border-b border-transparent"
-          >
-            {" "}
-            1176 Reviews
-          </a>
-        </div>
-        <div className=" flex justify-center space-x-2 mt-4 items-center font-bold  ">
-          Choose color
-        </div>
-        <div className=" flex justify-center space-x-2 mt-2 items-center    ">
-          <input
-            type="checkbox"
-            className="h-7 w-7 rounded-lg bg-blue-900  text-blue-900 "
-          />
+        <div className="md:grid md:grid-cols-5">
+          <div className="   ">
+            <div className=" space-y-3 md:flex md:flex-col md:items-center hidden  flex-1  ">
+              <img
+                src="images/model0.jpg"
+                className=" h-36 w-24 hover:border-red-500 border-b-4"
+                onMouseEnter={() => setInHover(0)}
+              />
+              <img
+                src="images/model0-1.png"
+                className="  h-36 w-24  hover:border-red-500 border-b-4  "
+                onMouseEnter={() => setInHover(1)}
+              />
+              <img
+                src="images/model0-2.png"
+                className=" h-36 w-24  hover:border-red-500 border-b-4  "
+                onMouseEnter={() => setInHover(2)}
+              />
+              <img
+                src="images/model0-3.png"
+                className="  h-36 w-24 hover:border-red-500 border-b-4 "
+                onMouseEnter={() => setInHover(3)}
+              />
+            </div>
+          </div>
 
-          <input
-            type="checkbox"
-            className=" bg-black text-black h-7 w-7  rounded-lg "
-          />
-          <input
-            type="checkbox"
-            className="h-7 w-7 rounded-lg bg-gray-800 text-gray-800 "
-          />
-          <input
-            type="checkbox"
-            className="h-7 w-7 rounded-lg text-gray-500 bg-gray-500 "
-          />
-          <input
-            type="checkbox"
-            className="h-7 w-7 text-gray-100 bg-gray-100 rounded-lg "
-          />
-        </div>
-        <div className=" flex justify-center space-x-2 mt-6 items-center font-bold  ">
-          Choose Size
-          <div className="text-UrlBlue none">Size guide</div>
-        </div>
-        <div className=" flex justify-center space-x-2 mt-2 items-center font-bold  ">
-          <button className="border py-2 px-4 hover:bg-gray-100 hover:shadow-lg shadow-inner	 font-bold">
-            S
-          </button>
-          <button className="border hover:bg-gray-100 hover:shadow-lg py-2 px-3 font-bold">
-            M
-          </button>
-          <button className="border hover:bg-gray-100 hover:shadow-lg py-2 px-4 font-bold">
-            L
-          </button>
-          <button className="border hover:bg-gray-100 hover:shadow-lg py-2 px-3 font-bold">
-            XL
-          </button>
-          <button className="border hover:bg-gray-100 hover:shadow-lg py-2 px-2 font-bold">
-            2XL
-          </button>
-          <button className="border hover:bg-gray-100 hover:shadow-lg py-2 px-2 font-bold">
-            3XL
-          </button>
-        </div>
-      </div>
+          <div className="md:col-start-2  md:col-span-2  flex   justify-center lg:justify-start  ">
+            {inHover === 0 ? (
+              <img
+                src="images/model0.jpg"
+                className=" lg:h-auto md:h-96 h-auto"
+              />
+            ) : inHover === 1 ? (
+              <img
+                src="images/model0-1.png"
+                className="lg:h-auto md:h-96 h-auto "
+              />
+            ) : inHover === 2 ? (
+              <img
+                src="images/model0-2.png"
+                className=" lg:h-auto md:h-96 h-auto "
+              />
+            ) : (
+              <img
+                src="images/model0-3.png"
+                className=" lg:h-auto md:h-96 h-auto"
+              />
+            )}
+          </div>
 
-      <div className="flex justify-center items-center mt-6">
-        <h3 className="font-bold">Estimated delivery to</h3>
-      </div>
+          <div className="md:col-start-4 md:col-span-2 ">
+            <div className="flex  md:justify-start  justify-center ">
+              <h1 className=" text-2xl font-bold md:whitespace-normal truncate">
+                Unisex Basic Softstyle T-Shirt | Gildan 64000
+              </h1>
+            </div>
 
-      <div className="flex justify-center items-center">
-        <img src="images/ca.svg" className=" h-4 " />
-        <p className=" "> Canada</p>
-      </div>
+            <div className="flex mt-6 md:justify-start  justify-center">
+              <div>
+                <span className="text-gray-500 line-through text-xl">
+                  $54.00
+                </span>
+                <span className="text-red-500 pl-2 text-xl">$40.50</span>
+              </div>
+            </div>
 
-      <div className="flex justify-center items-center mt-2">
-        <p className=" text-2xl font-bold">Apr 15–23</p>
-      </div>
-      <div className="flex justify-center items-center mt-6">
-        <button className="uppercase text-white bg-black w-72 h-10 hover:bg-gray-500 transition transform duration-300 ease-in-out ">
-          Add to Bag
-        </button>
+            <div className=" flex items-center space-x-2 mt-4 md:justify-start  justify-center   ">
+              <img src="images/star.svg" className=" h-4  " />
+              <img src="images/star.svg" className="h-4 " />
+              <img src="images/star.svg" className=" h-4" />
+              <img src="images/star.svg" className=" h-4" />
+              <img src="images/star.svg" className=" h-4" />
+              <a
+                href="#"
+                className="text-UrlBlue hover:border-UrlBlue border-b border-transparent"
+              >
+                {" "}
+                1176 Reviews
+              </a>
+            </div>
+            <div className=" flex  space-x-2 mt-4  font-bold md:justify-start  justify-center  ">
+              Choose color
+            </div>
+            <div className=" flex space-x-2 mt-2 md:justify-start  justify-center    ">
+              <input
+                type="checkbox"
+                className="h-7 w-7 rounded-lg bg-blue-900  text-blue-900 "
+              />
+
+              <input
+                type="checkbox"
+                className=" bg-black text-black h-7 w-7  rounded-lg "
+              />
+              <input
+                type="checkbox"
+                className="h-7 w-7 rounded-lg bg-gray-800 text-gray-800 "
+              />
+              <input
+                type="checkbox"
+                className="h-7 w-7 rounded-lg text-gray-500 bg-gray-500 "
+              />
+              <input
+                type="checkbox"
+                className="h-7 w-7 text-gray-100 bg-gray-100 rounded-lg "
+              />
+            </div>
+            <div className=" mt-6 md:w-72 space-x-24 flex font-bold md:justify-start  justify-center ">
+              <p className="md:inline md:pr-6 ">Choose Size</p>
+              <p className="text-UrlBlue md:inline ">Size guide</p>
+            </div>
+            <div className=" flex  space-x-1 mt-2  font-bold md:justify-start  justify-center ">
+              <button className="border py-2 px-4 hover:bg-gray-100 hover:shadow-lg shadow-inner	 font-bold">
+                S
+              </button>
+              <button className="border hover:bg-gray-100 hover:shadow-lg py-2 px-3 font-bold">
+                M
+              </button>
+              <button className="border hover:bg-gray-100 hover:shadow-lg py-2 px-4 font-bold">
+                L
+              </button>
+              <button className="border hover:bg-gray-100 hover:shadow-lg py-2 px-3 font-bold">
+                XL
+              </button>
+              <button className="border hover:bg-gray-100 hover:shadow-lg py-2 px-2 font-bold">
+                2XL
+              </button>
+              <button className="border hover:bg-gray-100 hover:shadow-lg py-2 px-2 font-bold">
+                3XL
+              </button>
+            </div>
+            <div className="flex md:justify-start  justify-center  mt-6">
+              <h3 className="font-bold">Estimated delivery to</h3>
+            </div>
+
+            <div className="flex mt-2 items-center md:justify-start  justify-center">
+              <img src="images/ca.svg" className=" h-4   " />
+              <p className=" pl-2 "> Canada</p>
+            </div>
+
+            <div className="flex md:justify-start  justify-center  mt-2">
+              <p className=" text-2xl font-bold">Apr 15–23</p>
+            </div>
+            <div className="flex  pr-2 md:justify-start  justify-center  mt-6">
+              <button className="uppercase text-white bg-black w-96 h-10 hover:bg-gray-500 transition transform duration-300 ease-in-out  ">
+                Add to Bag
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
