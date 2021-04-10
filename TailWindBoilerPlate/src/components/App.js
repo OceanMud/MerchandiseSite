@@ -187,7 +187,7 @@ function App() {
           </div>
         </div>
 
-        <div className="md:grid md:grid-cols-5">
+        <div className="md:grid md:grid-cols-5 max-w-screen-2xl mx-auto">
           <div className="   ">
             <div className=" space-y-3 md:flex md:flex-col md:items-center hidden  flex-1  ">
               <img
@@ -263,7 +263,6 @@ function App() {
                 href="#"
                 className="text-UrlBlue hover:border-UrlBlue border-b border-transparent"
               >
-                {" "}
                 1176 Reviews
               </a>
             </div>
@@ -333,6 +332,118 @@ function App() {
               <button className="uppercase text-white bg-black w-96 h-10 hover:bg-gray-500 transition transform duration-300 ease-in-out  ">
                 Add to Bag
               </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="bg-gray-100 ">
+        <div className="grid lg:grid-cols-3 grid-cols-2 mt-10  text-gray-800 px-4  max-w-screen-2xl mx-auto">
+          <div className="flex  lg:pl-16 lg:w-80 w-96  ">
+            <div className="mt-6  ">
+              <div className="flex items-center  border-b border-gray-300 pb-2  ">
+                <img
+                  src="images/hanger.svg"
+                  className=" h-9 filter  contrast-50 pr-4  "
+                />
+                <h1 className="text-xl font-bold">Style and fit</h1>
+              </div>
+              <div className="mb-2 mt-2">
+                <h3 className="text-lg font-bold">Regular fit</h3>
+                <p className="text-lg leading-6">
+                  Standard length, the fabric easily gives into movement
+                </p>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold">Tubular</h3>
+                <p className="text-lg leading-6">
+                  Constructed from a single piece of cloth--it doesnt have side
+                  seams
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className=" order-last -mt-56 lg:m-0 w-96 lg:w-80   lg:pl-0 ">
+            <div className=" lg:mt-6 mt-10">
+              <div className="flex items-center  border-b border-gray-300 pb-2  ">
+                <img
+                  src="images/palette.svg"
+                  className=" h-9 filter contrast-50 pr-4  "
+                />
+                <h1 className="text-xl font-bold">Material</h1>
+              </div>
+              <div className="  mt-1  ">
+                <div className=" flex items-center space-x-8">
+                  <h3 className="text-lg font-bold">Fabric thickness</h3>
+                  <p> Medium weight</p>
+                </div>
+                <div>
+                  <progress className="w-72 h-1  bg-black" value="70" max="100">
+                    70 %
+                  </progress>
+                  <div className="flex text-sm space-x-32 text-gray-500">
+                    <p>Lightweight</p>
+                    <p>Heavyweight</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="">
+              <div className="">
+                <div className="mb-2  mt-2 ">
+                  <div className=" flex items-center space-x-8">
+                    <h3 className="text-lg font-bold">Softness scale</h3>
+                    <p> Medium rough</p>
+                  </div>
+                  <div>
+                    <progress
+                      className="w-72 h-1  bg-black"
+                      value="30"
+                      max="100"
+                    >
+                      70 %
+                    </progress>
+                    <div className="flex text-sm space-x-32 text-gray-500">
+                      <p>Extra rough</p>
+                      <p>Extra soft</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex md:col-auto col-span-2  ">
+            <div className="mt-6 ml-16 lg:ml-0  w-80">
+              <div className="flex items-center border-b border-gray-300 pb-2">
+                <img
+                  src="images/iron.svg"
+                  className=" h-9 filter contrast-50 pr-4  "
+                />
+                <h1 className="text-xl font-bold ">Features</h1>
+              </div>
+              <div className="mb-4 mt-2  ">
+                <h3 className="text-lg font-bold">Budget</h3>
+                <p className="text-lg">Suited for the economic buyer</p>
+              </div>
+              <div className=" mb-4 ">
+                <h3 className="text-lg font-bold ">Tear-away tag</h3>
+                <p className="text-lg">
+                  Easily removable tear-away tag that allows you to add a custom
+                  inside label
+                </p>
+              </div>
+              <div className="mb-4 ">
+                <h3 className="text-lg font-bold ">Unisex</h3>
+                <p className="text-lg">
+                  A classic t-shirt that fits well for both men and women
+                </p>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold ">Bestseller</h3>
+                <p className="text-lg">
+                  A top-selling item loved by our customers
+                </p>
+              </div>
             </div>
           </div>
         </div>
