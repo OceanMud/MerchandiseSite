@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import Navigation from "./Navigation";
 
 import "../styles/App.css";
 
 function App() {
   const [inHover, setInHover] = useState(-1);
+  const [folder, setFolder] = useState(0);
 
   return (
     <div className="">
@@ -213,133 +215,134 @@ function App() {
             </div>
           </div>
 
-          <div className="md:col-start-2  md:col-span-2  flex   justify-center lg:justify-start  ">
+          <div className="md:col-start-2  md:col-span-2  flex   justify-center lg:justify-start   ">
             {inHover === 0 ? (
               <img
                 src="images/model0.jpg"
-                className=" lg:h-auto md:h-96 h-auto"
+                className="lg:h-auto md:h-96 md:w-auto  w-full max-w-md mx-auto "
               />
             ) : inHover === 1 ? (
               <img
                 src="images/model0-1.png"
-                className="lg:h-auto md:h-96 h-auto "
+                className="lg:h-auto md:h-96 md:w-auto w-full max-w-md mx-auto "
               />
             ) : inHover === 2 ? (
               <img
                 src="images/model0-2.png"
-                className=" lg:h-auto md:h-96 h-auto "
+                className="lg:h-auto md:h-96 md:w-auto w-full max-w-md mx-auto "
               />
             ) : (
               <img
                 src="images/model0-3.png"
-                className=" lg:h-auto md:h-96 h-auto"
+                className=" lg:h-auto md:h-96 md:w-auto w-full max-w-md mx-auto"
               />
             )}
           </div>
 
           <div className="md:col-start-4 md:col-span-2 ">
-            <div className="flex  md:justify-start  justify-center ">
-              <h1 className=" text-2xl font-bold md:whitespace-normal truncate">
-                Unisex Basic Softstyle T-Shirt | Gildan 64000
-              </h1>
-            </div>
-
-            <div className="flex mt-6 md:justify-start  justify-center">
-              <div>
-                <span className="text-gray-500 line-through text-xl">
-                  $54.00
-                </span>
-                <span className="text-red-500 pl-2 text-xl">$40.50</span>
+            <div className="mx-auto    max-w-md">
+              <div className="flex  md:justify-start  ">
+                <h1 className=" text-2xl font-bold  ">
+                  Unisex Basic Softstyle T-Shirt | Gildan 64000
+                </h1>
               </div>
-            </div>
+              <div className="flex mt-6 md:justify-start ">
+                <div>
+                  <span className="text-gray-500 line-through text-xl">
+                    $54.00
+                  </span>
+                  <span className="text-red-500 pl-2 text-xl">$40.50</span>
+                </div>
+              </div>
 
-            <div className=" flex items-center space-x-2 mt-4 md:justify-start  justify-center   ">
-              <img src="images/star.svg" className=" h-4  " />
-              <img src="images/star.svg" className="h-4 " />
-              <img src="images/star.svg" className=" h-4" />
-              <img src="images/star.svg" className=" h-4" />
-              <img src="images/star.svg" className=" h-4" />
-              <a
-                href="#"
-                className="text-UrlBlue hover:border-UrlBlue border-b border-transparent"
-              >
-                1176 Reviews
-              </a>
-            </div>
-            <div className=" flex  space-x-2 mt-4  font-bold md:justify-start  justify-center  ">
-              Choose color
-            </div>
-            <div className=" flex space-x-2 mt-2 md:justify-start  justify-center    ">
-              <input
-                type="checkbox"
-                className="h-7 w-7 rounded-lg bg-blue-900  text-blue-900 "
-              />
+              <div className=" flex items-center space-x-2 mt-4 md:justify-start     ">
+                <img src="images/star.svg" className=" h-4  " />
+                <img src="images/star.svg" className="h-4 " />
+                <img src="images/star.svg" className=" h-4" />
+                <img src="images/star.svg" className=" h-4" />
+                <img src="images/star.svg" className=" h-4" />
+                <a
+                  href="#"
+                  className="text-UrlBlue hover:border-UrlBlue border-b border-transparent"
+                >
+                  1176 Reviews
+                </a>
+              </div>
+              <div className=" flex  space-x-2 mt-4  font-bold md:justify-start  ">
+                Choose color
+              </div>
+              <div className=" flex space-x-2 mt-2 md:justify-start     ">
+                <input
+                  type="checkbox"
+                  className="h-7 w-7 rounded-lg bg-blue-900  text-blue-900 "
+                />
 
-              <input
-                type="checkbox"
-                className=" bg-black text-black h-7 w-7  rounded-lg "
-              />
-              <input
-                type="checkbox"
-                className="h-7 w-7 rounded-lg bg-gray-800 text-gray-800 "
-              />
-              <input
-                type="checkbox"
-                className="h-7 w-7 rounded-lg text-gray-500 bg-gray-500 "
-              />
-              <input
-                type="checkbox"
-                className="h-7 w-7 text-gray-100 bg-gray-100 rounded-lg "
-              />
-            </div>
-            <div className=" mt-6 md:w-72 space-x-24 flex font-bold md:justify-start  justify-center ">
-              <p className="md:inline md:pr-6 ">Choose Size</p>
-              <p className="text-UrlBlue md:inline ">Size guide</p>
-            </div>
-            <div className=" flex  space-x-1 mt-2  font-bold md:justify-start  justify-center ">
-              <button className="border py-2 px-4 hover:bg-gray-100 hover:shadow-lg shadow-inner	 font-bold">
-                S
-              </button>
-              <button className="border hover:bg-gray-100 hover:shadow-lg py-2 px-3 font-bold">
-                M
-              </button>
-              <button className="border hover:bg-gray-100 hover:shadow-lg py-2 px-4 font-bold">
-                L
-              </button>
-              <button className="border hover:bg-gray-100 hover:shadow-lg py-2 px-3 font-bold">
-                XL
-              </button>
-              <button className="border hover:bg-gray-100 hover:shadow-lg py-2 px-2 font-bold">
-                2XL
-              </button>
-              <button className="border hover:bg-gray-100 hover:shadow-lg py-2 px-2 font-bold">
-                3XL
-              </button>
-            </div>
-            <div className="flex md:justify-start  justify-center  mt-6">
-              <h3 className="font-bold">Estimated delivery to</h3>
-            </div>
+                <input
+                  type="checkbox"
+                  className=" bg-black text-black h-7 w-7  rounded-lg "
+                />
+                <input
+                  type="checkbox"
+                  className="h-7 w-7 rounded-lg bg-gray-800 text-gray-800 "
+                />
+                <input
+                  type="checkbox"
+                  className="h-7 w-7 rounded-lg text-gray-500 bg-gray-500 "
+                />
+                <input
+                  type="checkbox"
+                  className="h-7 w-7 text-gray-100 bg-gray-100 rounded-lg "
+                />
+              </div>
+              <div className=" mt-6 md:w-72 space-x-24 flex font-bold md:justify-start  ">
+                <p className="md:inline md:pr-6 ">Choose Size</p>
+                <p className="text-UrlBlue md:inline ">Size guide</p>
+              </div>
+              <div className=" flex  space-x-1 mt-2  font-bold md:justify-start  ">
+                <button className="border py-2 px-4 hover:bg-gray-100 hover:shadow-lg shadow-inner	 font-bold">
+                  S
+                </button>
+                <button className="border hover:bg-gray-100 hover:shadow-lg py-2 px-3 font-bold">
+                  M
+                </button>
+                <button className="border hover:bg-gray-100 hover:shadow-lg py-2 px-4 font-bold">
+                  L
+                </button>
+                <button className="border hover:bg-gray-100 hover:shadow-lg py-2 px-3 font-bold">
+                  XL
+                </button>
+                <button className="border hover:bg-gray-100 hover:shadow-lg py-2 px-2 font-bold">
+                  2XL
+                </button>
+                <button className="border hover:bg-gray-100 hover:shadow-lg py-2 px-2 font-bold">
+                  3XL
+                </button>
+              </div>
+              <div className="flex md:justify-start   mt-6">
+                <h3 className="font-bold">Estimated delivery to</h3>
+              </div>
 
-            <div className="flex mt-2 items-center md:justify-start  justify-center">
-              <img src="images/ca.svg" className=" h-4   " />
-              <p className=" pl-2 "> Canada</p>
-            </div>
+              <div className="flex mt-2 items-center md:justify-start  ">
+                <img src="images/ca.svg" className=" h-4   " />
+                <p className=" pl-2 "> Canada</p>
+              </div>
 
-            <div className="flex md:justify-start  justify-center  mt-2">
-              <p className=" text-2xl font-bold">Apr 15–23</p>
-            </div>
-            <div className="flex  pr-2 md:justify-start  justify-center  mt-6">
-              <button className="uppercase text-white bg-black w-96 h-10 hover:bg-gray-500 transition transform duration-300 ease-in-out  ">
-                Add to Bag
-              </button>
+              <div className="flex md:justify-start  mt-2">
+                <p className=" text-2xl font-bold">Apr 15–23</p>
+              </div>
+              <div className="flex   md:justify-start  mb-4 md:mr-4  mt-6">
+                <button className="uppercase text-white bg-black w-full h-10 hover:bg-gray-500 transition transform duration-300 ease-in-out  ">
+                  Add to Bag
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="bg-gray-100 ">
-        <div className="grid lg:grid-cols-3 grid-cols-2 mt-10  text-gray-800 px-4  max-w-screen-2xl mx-auto">
-          <div className="flex  lg:pl-16 lg:w-80 w-96  ">
-            <div className="mt-6  ">
+      <div className="hidden md:block bg-gray-100 mb-10  ">
+        <div className="grid lg:grid-cols-3 grid-cols-2 gap-2 mt-10  text-gray-800 px-4  max-w-screen-2xl mx-auto">
+          <div className="flex max-w-sm justify-between   ">
+            <div className="mt-6 text-lg ">
               <div className="flex items-center  border-b border-gray-300 pb-2  ">
                 <img
                   src="images/hanger.svg"
@@ -348,72 +351,69 @@ function App() {
                 <h1 className="text-xl font-bold">Style and fit</h1>
               </div>
               <div className="mb-2 mt-2">
-                <h3 className="text-lg font-bold">Regular fit</h3>
-                <p className="text-lg leading-6">
+                <h3 className="font-bold">Regular fit</h3>
+                <p className=" leading-6">
                   Standard length, the fabric easily gives into movement
                 </p>
               </div>
               <div>
-                <h3 className="text-lg font-bold">Tubular</h3>
-                <p className="text-lg leading-6">
+                <h3 className=" font-bold">Tubular</h3>
+                <p className=" leading-6">
                   Constructed from a single piece of cloth--it doesnt have side
                   seams
                 </p>
               </div>
             </div>
           </div>
-          <div className=" order-last -mt-56 lg:m-0 w-96 lg:w-80   lg:pl-0 ">
+          <div className=" order-last  -mt-52 lg:m-0 max-w-sm    lg:pl-0 ">
             <div className=" lg:mt-6 mt-10">
-              <div className="flex items-center  border-b border-gray-300 pb-2  ">
+              <div className="flex items-center  border-b border-gray-300 pb-2   ">
                 <img
                   src="images/palette.svg"
-                  className=" h-9 filter contrast-50 pr-4  "
+                  className=" h-9 filter contrast-50 pr-4   "
                 />
                 <h1 className="text-xl font-bold">Material</h1>
               </div>
               <div className="  mt-1  ">
-                <div className=" flex items-center space-x-8">
-                  <h3 className="text-lg font-bold">Fabric thickness</h3>
+                <div className=" flex items-center  justify-between">
+                  <h3 className="text-md font-bold">Fabric thickness</h3>
                   <p> Medium weight</p>
                 </div>
                 <div>
-                  <progress className="w-72 h-1  bg-black" value="70" max="100">
+                  <progress
+                    className="w-full h-1  bg-black"
+                    value="70"
+                    max="100"
+                  >
                     70 %
                   </progress>
-                  <div className="flex text-sm space-x-32 text-gray-500">
+                  <div className="flex text-sm justify-between text-gray-500">
                     <p>Lightweight</p>
                     <p>Heavyweight</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="">
-              <div className="">
-                <div className="mb-2  mt-2 ">
-                  <div className=" flex items-center space-x-8">
-                    <h3 className="text-lg font-bold">Softness scale</h3>
-                    <p> Medium rough</p>
-                  </div>
-                  <div>
-                    <progress
-                      className="w-72 h-1  bg-black"
-                      value="30"
-                      max="100"
-                    >
-                      70 %
-                    </progress>
-                    <div className="flex text-sm space-x-32 text-gray-500">
-                      <p>Extra rough</p>
-                      <p>Extra soft</p>
-                    </div>
-                  </div>
+
+            <div className="mb-2  mt-2 ">
+              <div className=" flex items-center justify-between">
+                <h3 className="text-md font-bold">Softness scale</h3>
+                <p> Medium rough</p>
+              </div>
+              <div>
+                <progress className="w-full h-1  bg-black" value="30" max="100">
+                  70 %
+                </progress>
+                <div className="flex text-sm justify-between text-gray-500">
+                  <p>Extra rough</p>
+                  <p>Extra soft</p>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="flex md:col-auto col-span-2  ">
-            <div className="mt-6 ml-16 lg:ml-0  w-80">
+            <div className="text-lg mt-6 ml-16 lg:ml-0   max-w-sm ">
               <div className="flex items-center border-b border-gray-300 pb-2">
                 <img
                   src="images/iron.svg"
@@ -422,32 +422,110 @@ function App() {
                 <h1 className="text-xl font-bold ">Features</h1>
               </div>
               <div className="mb-4 mt-2  ">
-                <h3 className="text-lg font-bold">Budget</h3>
-                <p className="text-lg">Suited for the economic buyer</p>
+                <h3 className="font-bold">Budget</h3>
+                <p>Suited for the economic buyer</p>
               </div>
               <div className=" mb-4 ">
-                <h3 className="text-lg font-bold ">Tear-away tag</h3>
-                <p className="text-lg">
-                  Easily removable tear-away tag that allows you to add a custom
+                <h3 className=" font-bold ">Tear-away tag</h3>
+                <p>
+                  Easily removable tear-away tag that allows you to add an
                   inside label
                 </p>
               </div>
               <div className="mb-4 ">
-                <h3 className="text-lg font-bold ">Unisex</h3>
-                <p className="text-lg">
-                  A classic t-shirt that fits well for both men and women
-                </p>
+                <h3 className=" font-bold ">Unisex</h3>
+                <p>A classic t-shirt that fits well for both men and women</p>
               </div>
               <div>
-                <h3 className="text-lg font-bold ">Bestseller</h3>
-                <p className="text-lg">
-                  A top-selling item loved by our customers
-                </p>
+                <h3 className=" font-bold ">Bestseller</h3>
+                <p>A top-selling item that is loved by our customers</p>
               </div>
             </div>
           </div>
         </div>
+
+        <div className="md:hidden">
+          <Navigation />
+        </div>
       </div>
+
+      <div className=" max-w-3xl mx-auto mt-10   border-b border-gray-500">
+        <div className=" space-x-2  ">
+          <div className=" inline-block group border-l  border-r hover:border-gray-200">
+            <button
+              className="p-2 bg-gray-100 border-t-4 group-hover:border-red-400 focus:outline-none  group-hover:bg-white"
+              onClick={() => setFolder(0)}
+            >
+              Description
+            </button>
+          </div>
+
+          <div className=" inline-block group border-l  border-r hover:border-gray-200">
+            <button
+              className="p-2 bg-gray-100 border-t-4 group-hover:border-red-400 focus:outline-none  group-hover:bg-white"
+              onClick={() => setFolder(1)}
+            >
+              Shipping
+            </button>
+          </div>
+          <div className=" inline-block group border-l  border-r hover:border-gray-200">
+            <button className="p-2 bg-gray-100 border-t-4 group-hover:border-red-400 focus:outline-none group-hover:bg-white">
+              File guidelines
+            </button>
+          </div>
+        </div>
+      </div>
+      {folder === 0 ? (
+        <div className=" text-sm pl-2 pt-10 text-gray-700 max-w-3xl mx-auto">
+          <p>
+            The best-selling Gildan softstyle tee is a staple every wardrobe
+            should have. The shirt is made of durable cotton fabric and has a
+            double-stitched neckline and sleeves. This shirt is long-lasting
+            enough to become an everyday favorite!
+          </p>
+          <br />
+          <div className="pl-6">
+            <li>Sport Grey is 90% ring-spun cotton, 10% polyester</li>
+            <li>Dark Heather is 65% polyester, 35% cotton</li>
+            <li>Fabric weight: 4.5 oz/y² (153 g/m²)</li>
+            <li>Pre-shrunk for extra durability</li>
+            <li>Regular fit</li>
+            <li>Tubular construction</li>
+            <li>Shoulder-to-shoulder taping</li>
+            <li>Quarter-turned to avoid crease down the center</li>
+            <li>
+              Blank product sourced from Bangladesh, Honduras, Haiti, Mexico, or
+              Nicaragua
+            </li>
+          </div>
+          <br />
+          <p>
+            Disclaimer: Gildan now offers a separate label disclosing this
+            product's country of origin. It used to be located on the neck
+            label, but now it's sewn on the inside of the shoulder seam. You
+            might receive t-shirts with either label placement until we sell out
+            of the previous version.
+          </p>
+          <br />
+          <p>This product is made on demand.</p>
+          <br />
+          <h1 className=" text-black text-xl font-bold">
+            Print care instructions
+          </h1>
+          <br />
+          <p>
+            Follow our
+            <a href="#" className=" px-1 text-UrlBlue">
+              care instructions
+            </a>
+            to look after your custom printed products.
+          </p>
+        </div>
+      ) : (
+        <p>hello</p>
+      )}
+
+      <div className="h-screen flex justify-center items-center">hi</div>
     </div>
   );
 }
