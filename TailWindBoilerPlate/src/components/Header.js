@@ -1,20 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 const Header = () => {
   const [dropDown, setDropDown] = useState(0);
   const [menuActive, setMenuActive] = useState(false);
   const [subMenu, setSubMenu] = useState(false);
   const [visible, setVisible] = useState("absolute");
+  const subRef = useRef(subMenu);
+  subRef.current = subMenu;
+
+  const dropDownTestExtended = (current) => {
+    if (current !== true) {
+      setMenuActive(false);
+      setDropDown(0);
+      setVisible("hidden");
+    }
+  };
 
   const dropDownTest = () => {
     setTimeout(() => {
-      if (subMenu === false) {
-        setMenuActive(false);
-        setDropDown(0);
-        setVisible("hidden");
-        return;
-      }
-    }, 1000);
+      dropDownTestExtended(subRef.current);
+    }, 2000);
   };
 
   return (
@@ -179,13 +184,14 @@ const Header = () => {
         </div>
 
         {dropDown === 1 && menuActive === true ? (
-          <div
-            className="pl-6  "
-            onMouseEnter={() => setSubMenu(true)}
-            onMouseLeave={() => setMenuActive(false)}
-          >
+          <div className="pl-6  ">
             <div
               className={` border border-gray-200  bg-white z-10 w-full ${visible} max-w-xs mt-1 h-60  mx-auto shadow-2xl flex flex-col pt-4  font-semibold text-gray-600  `}
+              onMouseEnter={() => setSubMenu(true)}
+              onMouseLeave={() => {
+                setMenuActive(false);
+                setSubMenu(false);
+              }}
             >
               <a
                 href="#"
@@ -243,7 +249,10 @@ const Header = () => {
           <div
             className="pl-6  "
             onMouseEnter={() => setSubMenu(true)}
-            onMouseLeave={() => setMenuActive(false)}
+            onMouseLeave={() => {
+              setMenuActive(false);
+              setSubMenu(false);
+            }}
           >
             <div className=" border border-gray-200  bg-white z-10 w-full absolute max-w-xs mt-1 h-60  mx-auto shadow-2xl ml-20 grid grid-cols-3 grid-flow-row pt-4 text-sm  font-semibold text-gray-600  ">
               <a href="#" className=" space-y-2    py-2 ">
