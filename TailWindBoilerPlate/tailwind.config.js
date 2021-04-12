@@ -13,6 +13,7 @@ module.exports = {
       contrast: ["hover", "group-hover"],
       rotate: ["group-hover"],
       textColor: ["even"],
+      translate: ["group-hover"],
     },
   },
   plugins: [require("@tailwindcss/forms")],
