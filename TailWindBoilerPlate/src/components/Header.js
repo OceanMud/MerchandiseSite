@@ -19,7 +19,7 @@ const Header = () => {
   const dropDownTest = () => {
     setTimeout(() => {
       dropDownTestExtended(subRef.current);
-    }, 2000);
+    }, 500);
   };
 
   return (
@@ -35,21 +35,21 @@ const Header = () => {
               <p className=" md:hidden text-xs ">menu</p>
             </div>
 
-            <div className="flex w-full items-center justify-center ">
+            <div className="flex w-full items-center justify-center  ">
               <img
-                className="xl:h-6 md:block hidden h-4 "
+                className="xl:h-14 md:block hidden object-center h-10 "
                 src="/images/logo.svg"
               />
               <img
-                className="xl:h-6  md:hidden pl-24  block h-5  "
-                src="/images/logo-icon.svg"
+                className="xl:h-6  md:hidden pl-24  block h-10  "
+                src="/images/logo.svg"
               />
             </div>
-            <div className="relative hidden md:block">
+            <div className="relative hidden md:block my-auto">
               <input
                 type="form"
-                placeholder="Search Printful"
-                className=" xl:ml-40 xl:w-96 w-48 rounded-md ml-10  border border-gray-500 
+                placeholder="Search GwentGear"
+                className="  xl:ml-40 xl:w-96 w-48 rounded-md ml-10  border border-gray-500 
             text-sm
            text-gray-900
           hover:shadow-lg bg-gray-100 hover:bg-gray-50 focus:bg-white outline-none pl-10 py-2 "
@@ -117,7 +117,11 @@ const Header = () => {
            "
         />
       </div>
-      <div className="border-gray-200   md:border-b py-1  ">
+      <div
+        className="border-gray-200   md:border-b py-1  "
+        onMouseEnter={() => setSubMenu(true)}
+        onMouseLeave={(() => setSubMenu(false), () => setMenuActive(false))}
+      >
         <div className="  max-w-screen-2xl mx-auto pl-12 pr-4 pb-4 space-x-5 text-sm mt-4   text-gray-500 hidden md:block">
           <a
             href="# "

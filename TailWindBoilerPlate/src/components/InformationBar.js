@@ -4,7 +4,7 @@ import Navigation from "./Navigation";
 const InformationBar = () => {
   return (
     <div>
-      <div className="hidden md:block bg-gray-100 mb-10  ">
+      <div className="hidden md:block bg-gray-100 mb-10 pb-6  ">
         <div className="grid lg:grid-cols-3 grid-cols-2 gap-2 mt-10  text-gray-800 px-4  max-w-screen-2xl mx-auto">
           <div className="flex max-w-sm justify-between   ">
             <div className="mt-6 text-lg ">

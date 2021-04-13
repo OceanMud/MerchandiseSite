@@ -14,6 +14,8 @@ module.exports = {
       rotate: ["group-hover"],
       textColor: ["even"],
       translate: ["group-hover"],
+      outline: ["focus"],
+      borderWidth: ["focus"],
     },
   },
   plugins: [require("@tailwindcss/forms")],
