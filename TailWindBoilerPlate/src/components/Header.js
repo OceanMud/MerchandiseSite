@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [dropDown, setDropDown] = useState(0);
@@ -138,14 +139,12 @@ const Header = () => {
             </div>
 
             <div className="flex w-full items-center justify-center  ">
-              <img
-                className="xl:h-14 md:block hidden object-center h-10 "
-                src="/images/logo.svg"
-              />
-              <img
-                className="xl:h-6  md:hidden pl-24  block h-10  "
-                src="/images/logo.svg"
-              />
+              <Link to="/">
+                <img
+                  className="xl:h-14  pl-24 md:pl-0 md:object-center h-10 "
+                  src="/images/logo.svg"
+                />
+              </Link>
             </div>
             <div className="relative hidden md:block my-auto">
               <input

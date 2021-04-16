@@ -7,7 +7,7 @@ const NewsLetter = () => {
         <h1 className="font-bold text-lg mb-4">Subscribe to our newsletter!</h1>
 
         <input
-          className="rounded w-96 focus:shadow-xl appearance-none focus:outline-none shadow-none focus:ring-0  focus:border-gray-400  border-gray-300 focus:border-t bg-gray-50  border-t-2  "
+          className="rounded w-80 sm:w-96 focus:shadow-xl appearance-none focus:outline-none shadow-none focus:ring-0  focus:border-gray-400  border-gray-300 focus:border-t bg-gray-50  border-t-2  "
           type="text"
           placeholder="NewsLetter"
         />
@@ -33,7 +33,7 @@ const NewsLetter = () => {
             <img src="images/usps.svg" className=" h-6 " />
             <img src="images/dhl.svg" className=" h-6 " />
             <img src="images/fedex.png" className=" h-6 " />
-            <img src="images/asendia.png" className=" h-6 " />
+            <img src="images/asendia.png" className=" h-6 overflow-hidden " />
           </div>
         </div>
       </div>

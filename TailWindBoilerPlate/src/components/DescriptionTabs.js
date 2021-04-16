@@ -6,7 +6,7 @@ const DescriptionTabs = () => {
   const [selected, setSelected] = useState("");
 
   return (
-    <div>
+    <div className="mb-8">
       <div className="md:px-28">
         <div className=" md:max-w-6xl  max-w-md mx-auto mt-10   border-b border-gray-300">
           <div className=" space-x-2  ">

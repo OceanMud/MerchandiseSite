@@ -15,7 +15,7 @@ module.exports = {
       textColor: ["even"],
       translate: ["group-hover"],
       outline: ["focus"],
-      borderWidth: ["focus"],
+      borderWidth: ["focus, hover"],
     },
   },
   plugins: [require("@tailwindcss/forms")],

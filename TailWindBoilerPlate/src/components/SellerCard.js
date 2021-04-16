@@ -1,6 +1,8 @@
 import React from "react";
 import SellerCardImages from "./SellerCardImages";
 import SellerCardDescriptions from "./SellerCardDescriptions";
+import InformationBar from "./InformationBar";
+import DescriptionTabs from "./DescriptionTabs";
 
 const SellerCard = () => {
   return (
@@ -48,6 +50,8 @@ const SellerCard = () => {
           <SellerCardImages />
           <SellerCardDescriptions />
         </div>
+        <InformationBar />
+        <DescriptionTabs />
       </div>
     </div>
   );
