@@ -1,11 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   return (
     <div className="lg:grid lg:grid-cols-2  ">
       <div className="p-20 pt-0  ">
         <div className="text-xs font-bold mt-32 space-y-2 lg:w-auto  w-96  mx-auto  ">
-          <img src="/images/logo.svg" className="h-16 lg:-mt-10 mb-20" />
+          <Link to="/">
+            <img src="/images/logo.svg" className="h-16 lg:-mt-10 mb-20" />
+          </Link>
           <div className="">
             <h1 className="text-2xl font-semibold mb-10  ">
               Sign up to GwentGear

@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter, Router, Route, Switch } from "react-router-dom";
+import { Router, Route, Switch, useLocation } from "react-router-dom";
 import createHistory from "history/createBrowserHistory";
 import SellerCard from "../SellerCard";
 import Header from "../Header";
@@ -13,21 +13,29 @@ import NewsLetter from "../NewsLetter";
 export const history = createHistory();
 
 const AppRouter = () => {
-  let location = location();
+  const location = useLocation();
   return (
     <div>
-      {location.pathname === "signup" ||
-      location.pathname === "signin" ? null : (
+      {location.pathname.toLowerCase() === "/signup".toLowerCase() ||
+      location.pathname.toLowerCase() === "/signin".toLowerCase() ? null : (
         <Header />
       )}
       <Switch>
-        <Route path="/Signup" component={Signup} />
-        <Route path="/Signin" component={Signin} />
+        <Route path="/signup" component={Signup} />
+        <Route path="/signin" component={Signin} />
         <Route path="/" component={SellerCard} exact={true} />
         <Route path="/Dashboard" component={Dashboard} />
 
         <Route component={SellerCard} />
       </Switch>
+
+      {location.pathname.toLowerCase() === "/signup".toLowerCase() ||
+      location.pathname.toLowerCase() === "/signin".toLowerCase() ? null : (
+        <>
+          <Resources />
+          <NewsLetter />
+        </>
+      )}
     </div>
   );
 };

@@ -173,7 +173,7 @@ const Header = () => {
                 Preferences
               </span>
             </a>
-            <a href="#" className="group  flex items-center ">
+            <Link to="/signin" className="group  flex items-center ">
               <img
                 src="images/user.svg"
                 className="  filter contrast-0  group-hover:contrast-100  inline-block w-5   "
@@ -181,8 +181,8 @@ const Header = () => {
               <span className="group-hover:text-gray-900 hidden md:inline-block ">
                 Sign in
               </span>
-            </a>
-            <a href="#" className="group  flex items-center">
+            </Link>
+            <Link to="signup" className="group  flex items-center">
               <img
                 src="images/user-add.svg"
                 className="  filter contrast-0  group-hover:contrast-100 inline-block w-5  "
@@ -190,8 +190,8 @@ const Header = () => {
               <span className="group-hover:text-gray-900 align-baseline hidden md:inline-block ">
                 Sign up
               </span>
-            </a>
-            <a href="# " className=" flex items-center">
+            </Link>
+            <Link to="/dashboard" className=" flex items-center">
               <img
                 src="images/cart.svg"
                 className="filter contrast-0   inline-block w-5  "
@@ -199,7 +199,7 @@ const Header = () => {
               <span className="align-baseline hidden md:inline-block">
                 My cart
               </span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
