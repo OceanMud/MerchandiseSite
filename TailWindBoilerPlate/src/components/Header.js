@@ -75,9 +75,6 @@ const Header = () => {
                   <a href="#" className="hover:text-gray-900">
                     Resources
                   </a>
-                  <a href="#" className="hover:text-gray-900">
-                    Blog
-                  </a>
                 </div>
                 <div className="flex  items-center px-2  flex-col">
                   <a
@@ -282,9 +279,6 @@ const Header = () => {
               className="xl:h-6 transform transition  group-hover:-rotate-180 ease-in-out duration-300 hidden filter contrast-0   md:inline-block h-5  "
               src="/images/arrow.svg"
             />
-          </a>
-          <a href="#" className="hover:text-gray-900">
-            Blog
           </a>
         </div>
 
