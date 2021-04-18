@@ -3,6 +3,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      maxWidth: {
+        "max-w-screen-3xl": "100rem",
+      },
       colors: {
         UrlBlue: "#117BC5",
       },
@@ -18,5 +21,5 @@ module.exports = {
       borderWidth: ["focus, hover"],
     },
   },
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [require("@tailwindcss/forms"), require("tailwindcss-textshadow")],
 };
