@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Checkout = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    return () => {};
+  }, []);
+
   return (
     <div className=" pb-40 -mb-20 bg-gray-50 pt-10">
       <div className="flex justify-center ">

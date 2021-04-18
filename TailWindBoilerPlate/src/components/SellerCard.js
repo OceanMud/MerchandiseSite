@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SellerCardImages from "./SellerCardImages";
 import SellerCardDescriptions from "./SellerCardDescriptions";
 import InformationBar from "./InformationBar";
 import DescriptionTabs from "./DescriptionTabs";
 
 const SellerCard = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    return () => {
+      console.log("unmounted");
+    };
+  }, []);
+
   return (
     <div>
       <div>

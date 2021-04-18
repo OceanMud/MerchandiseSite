@@ -34,9 +34,12 @@ const Signup = () => {
             placeholder=""
           />
           <div className="border-gray-200 border-b lg:w-96 w-72 ">
-            <button className="bg-red-600 mb-4 font-semibold text-sm rounded-md text-white mt-6 px-5 py-2 lg:w-auto w-full ">
-              Sign in
-            </button>
+            <Link
+              to="/dashboard"
+              className="flex justify-center bg-red-600 mb-4 font-semibold text-sm rounded-md text-white mt-6 px-5 py-2 lg:w-auto w-full "
+            >
+              Sign up
+            </Link>
             <div className="mb-4 ">
               <span className=" font-normal">
                 <input type="checkbox" className="mr-2  focus:ring-0" /> I agree

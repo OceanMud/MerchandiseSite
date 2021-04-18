@@ -1,6 +1,5 @@
 import React from "react";
 import { Router, Route, Switch, useLocation } from "react-router-dom";
-import createHistory from "history/createBrowserHistory";
 
 import Checkout from "../Checkout";
 import Dashboard from "../Dashboard";
@@ -8,13 +7,12 @@ import Header from "../Header";
 import Homepage from "../Homepage";
 import SellerCard from "../SellerCard";
 import NewsLetter from "../NewsLetter";
+import history from "./History";
 
 import Signin from "../Signin";
 import Signup from "../Signup";
 
 import Resources from "../Resources";
-
-export const history = createHistory();
 
 const AppRouter = () => {
   const location = useLocation();

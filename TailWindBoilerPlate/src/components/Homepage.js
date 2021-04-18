@@ -90,6 +90,7 @@ const Homepage = () => {
           className="absolute bottom-20 right-1 filter drop-shadow-2xl transform  -rotate-12 w-1/2"
         />
         <Link
+          home={"true"}
           to="SellerCard"
           className=" absolute bottom-4 right-10  self-center bg-white  w-28 text-center py-2 hover:bg-black hover:text-white font-semibold  "
         >

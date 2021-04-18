@@ -28,9 +28,12 @@ const Signin = () => {
             placeholder=""
           />
           <div className="border-gray-200 border-b lg:w-96 w-72 ">
-            <button className="bg-red-600 mb-4 font-semibold text-sm rounded-md text-white mt-6 px-5 py-2 lg:w-auto w-full ">
+            <Link
+              to="/dashboard"
+              className="flex justify-center bg-red-600 mb-4 font-semibold text-sm rounded-md text-white mt-6 px-5 py-2 lg:w-auto  "
+            >
               Sign in
-            </button>
+            </Link>
           </div>
           <div className=" text-sm font-normal flex space-x-2 text-gray-600">
             <a

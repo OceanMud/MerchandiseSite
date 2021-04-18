@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SellerCardDescriptions = () => {
   return (
@@ -91,10 +92,13 @@ const SellerCardDescriptions = () => {
         <div className="flex md:justify-start  mt-2">
           <p className=" text-2xl font-bold">Apr 15–23</p>
         </div>
-        <div className="flex   md:justify-start  mb-4 md:mr-4  mt-6">
-          <button className="uppercase text-white bg-black w-full h-10 hover:bg-gray-500 transition transform duration-300 ease-in-out  ">
-            Add to Bag
-          </button>
+        <div className="flex    md:justify-start  mb-4 md:mr-4  mt-6">
+          <Link
+            to="/checkout"
+            className="uppercase text-white  bg-black w-full h-10 hover:bg-gray-500 transition transform duration-300 ease-in-out  "
+          >
+            <p className="h-full w-full text-center mt-2"> Add to Bag</p>
+          </Link>
         </div>
       </div>
     </div>
