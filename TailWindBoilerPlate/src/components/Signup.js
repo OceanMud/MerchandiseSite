@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Signup = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <div className="lg:grid lg:grid-cols-2  ">
       <div className="p-20 pt-0  ">
@@ -19,23 +24,39 @@ const Signup = () => {
           <input
             className="  h-10 rounded lg:w-96 w-72 focus:shadow-xl appearance-none focus:outline-none shadow-none focus:ring-0  focus:border-gray-400  border-gray-300 focus:border-t bg-blue-50  border-t-2  "
             type="text"
-            placeholder=""
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
           <p className="">Email:</p>
           <input
             className="h-10 rounded lg:w-96 w-72 focus:shadow-xl appearance-none focus:outline-none shadow-none focus:ring-0  focus:border-gray-400  border-gray-300 focus:border-t bg-blue-50  border-t-2  "
+            value={email}
             type="text"
-            placeholder=""
+            onChange={(e) => setEmail(e.target.value)}
           />
           <p className="">Password:</p>
           <input
             className="h-10 rounded lg:w-96 w-72 focus:shadow-xl appearance-none focus:outline-none shadow-none focus:ring-0  focus:border-gray-400  border-gray-300 focus:border-t bg-blue-50  border-t-2  "
             type="text"
-            placeholder=""
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <div className="border-gray-200 border-b lg:w-96 w-72 ">
             <Link
-              to="/dashboard"
+              onClick={() => {
+                axios
+                  .post("https://merchandise-database.herokuapp.com/users", {
+                    name,
+                    email,
+                    password,
+                  })
+                  .then(function (response) {
+                    console.log(response);
+                  })
+                  .catch(function (error) {
+                    console.log(error);
+                  });
+              }}
               className="flex justify-center bg-red-600 mb-4 font-semibold text-sm rounded-md text-white mt-6 px-5 py-2 lg:w-auto w-full "
             >
               Sign up

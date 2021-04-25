@@ -8,9 +8,7 @@ const SellerCard = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    return () => {
-      console.log("unmounted");
-    };
+    return () => {};
   }, []);
 
   return (
