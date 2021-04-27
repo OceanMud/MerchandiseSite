@@ -1,5 +1,8 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { Link } from "react-router-dom";
+import UserContext from "./UserContext";
+import { history } from "./routers/AppRouter";
+import axios from "axios";
 
 const Header = () => {
   const [dropDown, setDropDown] = useState(0);
@@ -8,6 +11,22 @@ const Header = () => {
   const [visible, setVisible] = useState("absolute");
   const [sideMenu, setSideMenu] = useState(false);
   const [transition, setTransition] = useState("-translate-x-96 ");
+  const { userInfo, setUserInfo } = useContext(UserContext);
+  const [login, setLogin] = useState(false);
+  const { jsonToken, setJsonToken } = useContext(UserContext);
+
+  useEffect(() => {
+    console.log("userinfo", userInfo);
+    if (userInfo) {
+      setLogin(true);
+      console.log(login);
+    }
+
+    console.log("mounted");
+    return () => {
+      console.log("unmounted");
+    };
+  }, [userInfo]);
 
   const subRef = useRef(subMenu);
   subRef.current = subMenu;
@@ -170,24 +189,78 @@ const Header = () => {
                 Preferences
               </span>
             </a>
-            <Link to="/signin" className="group  flex items-center ">
-              <img
-                src="images/user.svg"
-                className="  filter contrast-0  group-hover:contrast-100  inline-block w-5   "
-              />
-              <span className="group-hover:text-gray-900 hidden md:inline-block ">
-                Sign in
-              </span>
-            </Link>
-            <Link to="signup" className="group  flex items-center">
-              <img
-                src="images/user-add.svg"
-                className="  filter contrast-0  group-hover:contrast-100 inline-block w-5  "
-              />
-              <span className="group-hover:text-gray-900 align-baseline hidden md:inline-block ">
-                Sign up
-              </span>
-            </Link>
+            {login === false ? (
+              <Link to="/signin" className="group  flex items-center ">
+                <img
+                  src="images/user.svg"
+                  className="  filter contrast-0  group-hover:contrast-100  inline-block w-5   "
+                />
+                <span className="group-hover:text-gray-900 hidden md:inline-block ">
+                  Sign in
+                </span>
+              </Link>
+            ) : (
+              <Link to="/dashboard" className="group  flex items-center">
+                <img
+                  src="images/account.svg"
+                  className="  filter contrast-0  group-hover:contrast-100  inline-block w-5   "
+                />
+                <p className=" group-hover:text-gray-900 hidden md:inline-block ">
+                  Account
+                </p>
+              </Link>
+            )}
+            {login === false ? (
+              <Link to="signup" className="group  flex items-center">
+                <img
+                  src="images/user-add.svg"
+                  className="  filter contrast-0  group-hover:contrast-100 inline-block w-5  "
+                />
+                <span className="group-hover:text-gray-900 align-baseline hidden md:inline-block ">
+                  Sign up
+                </span>
+              </Link>
+            ) : (
+              <div
+                className="group  flex items-center"
+                onClick={() => {
+                  console.log(jsonToken);
+                  const config = {
+                    headers: { Authorization: `Bearer ${jsonToken}` },
+                  };
+
+                  axios
+                    .post(
+                      "http://localhost:3001/users/logout",
+                      {},
+
+                      config
+                    )
+                    .then(function (response) {
+                      if (response.status === 200) {
+                        console.log("user logged out");
+                        console.log(response);
+                        setLogin(false);
+                        history.push("/");
+                      } else {
+                        throw new Error("Error");
+                      }
+                    })
+
+                    .catch(function (error) {
+                      console.log(error);
+                    });
+                }}
+              >
+                <img
+                  src="images/logout.svg"
+                  className="  filter contrast-0  group-hover:contrast-100 inline-block w-5  "
+                />
+                <span className="group-hover:text-gray-900 align-baseline hidden md:inline-block ">
+                  Logout
+                </span>
+              </div>
+            )}
             <Link to="/dashboard" className=" flex items-center">
               <img
                 src="images/cart.svg"

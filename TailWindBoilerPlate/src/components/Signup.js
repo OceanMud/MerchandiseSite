@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { history } from "./routers/AppRouter";
+import UserContext from "./UserContext";
 import axios from "axios";
 
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { userInfo, setUserInfo } = useContext(UserContext);
+  const { oldPassword, setOldPassword } = useContext(UserContext);
+  const { jsonToken, setJsonToken } = useContext(UserContext);
 
   return (
     <div className="lg:grid lg:grid-cols-2  ">
@@ -37,22 +42,35 @@ const Signup = () => {
           <p className="">Password:</p>
           <input
             className="h-10 rounded lg:w-96 w-72 focus:shadow-xl appearance-none focus:outline-none shadow-none focus:ring-0  focus:border-gray-400  border-gray-300 focus:border-t bg-blue-50  border-t-2  "
-            type="text"
+            type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
           <div className="border-gray-200 border-b lg:w-96 w-72 ">
-            <Link
+            <div
               onClick={() => {
+                setOldPassword(password);
                 axios
-                  .post("https://merchandise-database.herokuapp.com/users", {
+                  .post("http://localhost:3001/users", {
                     name,
                     email,
                     password,
                   })
                   .then(function (response) {
-                    console.log(response);
+                    if (response.status === 201) {
+                      setUserInfo({
+                        name: response.data.user.name,
+                        email: response.data.user.email,
+                      });
+                      setJsonToken(response.data.token);
+                      console.log(response);
+
+                      history.push("/dashboard");
+                    } else {
+                      throw new Error("Error");
+                    }
                   })
+
                   .catch(function (error) {
                     console.log(error);
                   });
@@ -60,7 +78,7 @@ const Signup = () => {
               className="flex justify-center bg-red-600 mb-4 font-semibold text-sm rounded-md text-white mt-6 px-5 py-2 lg:w-auto w-full "
             >
               Sign up
-            </Link>
+            </div>
             <div className="mb-4 ">
               <span className=" font-normal">
                 <input type="checkbox" className="mr-2  focus:ring-0" /> I agree

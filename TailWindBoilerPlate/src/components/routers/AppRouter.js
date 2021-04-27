@@ -7,7 +7,9 @@ import Header from "../Header";
 import Homepage from "../Homepage";
 import SellerCard from "../SellerCard";
 import NewsLetter from "../NewsLetter";
-import history from "./History";
+import Settings from "../Settings";
+
+import createHistory from "history/createBrowserHistory";
 
 import Signin from "../Signin";
 import Signup from "../Signup";
@@ -27,6 +29,8 @@ const AppRouter = () => {
         <Route path="/signup" component={Signup} />
         <Route path="/signin" component={Signin} />
         <Route path="/sellercard" component={SellerCard} />
+        <Route path="/dashboard/settings" component={Settings} />
+
         <Route path="/dashboard" component={Dashboard} />
         <Route path="/checkout" component={Checkout} />
         <Route component={Homepage} />
@@ -51,4 +55,5 @@ const newRouter = () => {
   );
 };
 
+export const history = createHistory();
 export default newRouter;
