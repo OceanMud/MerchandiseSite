@@ -2,19 +2,19 @@ import React from "react";
 import { Router, Route, Switch, useLocation } from "react-router-dom";
 
 import Checkout from "../Checkout";
-import Dashboard from "../Dashboard";
-import Header from "../Header";
+import Dashboard from "../account/Dashboard";
+import Header from "../header/Header";
 import Homepage from "../Homepage";
-import SellerCard from "../SellerCard";
-import NewsLetter from "../NewsLetter";
-import Settings from "../Settings";
+import SellerCard from "../sellerpage/SellerCard";
+import NewsLetter from "../footer/NewsLetter";
+import Settings from "../account/Settings";
 
 import createHistory from "history/createBrowserHistory";
 
-import Signin from "../Signin";
-import Signup from "../Signup";
+import Signin from "../account/Signin";
+import Signup from "../account/Signup";
 
-import Resources from "../Resources";
+import Resources from "../footer/Resources";
 
 const AppRouter = () => {
   const location = useLocation();

@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import Header from "./Header";
-import NewsLetter from "./NewsLetter";
-import Resources from "./Resources";
-import UserContext from "./UserContext";
+import Header from "../header/Header";
+import NewsLetter from "../footer/NewsLetter";
+import Resources from "../footer/Resources";
+import UserContext from "../UserContext";
 
 const Dashboard = () => {
   const { userInfo, setUserInfo } = useContext(UserContext);

@@ -13,6 +13,8 @@ const Context = () => {
   const [userInfo, setUserInfo] = useState("");
   const [oldPassword, setOldPassword] = useState("");
   const [jsonToken, setJsonToken] = useState("");
+  const [sideMenu, setSideMenu] = useState(false);
+  const [transition, setTransition] = useState("-translate-x-96");
 
   return (
     <React.StrictMode>
@@ -24,6 +26,10 @@ const Context = () => {
           setOldPassword,
           jsonToken,
           setJsonToken,
+          sideMenu,
+          setSideMenu,
+          transition,
+          setTransition,
         }}
       >
         <AppRouter />
