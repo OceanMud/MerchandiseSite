@@ -8,8 +8,7 @@ import Homepage from "../Homepage";
 import SellerCard from "../sellerpage/SellerCard";
 import NewsLetter from "../footer/NewsLetter";
 import Settings from "../account/Settings";
-
-import createHistory from "history/createBrowserHistory";
+import history from "./History";
 
 import Signin from "../account/Signin";
 import Signup from "../account/Signup";
@@ -55,5 +54,4 @@ const newRouter = () => {
   );
 };
 
-export const history = createHistory();
 export default newRouter;

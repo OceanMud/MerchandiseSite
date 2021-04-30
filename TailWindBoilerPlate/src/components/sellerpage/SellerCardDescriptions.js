@@ -18,13 +18,13 @@ const SellerCardDescriptions = () => {
         </div>
 
         <div className=" flex items-center space-x-2 mt-4 md:justify-start     ">
-          <img src="images/star.svg" className=" h-4  " />
-          <img src="images/star.svg" className="h-4 " />
-          <img src="images/star.svg" className=" h-4" />
-          <img src="images/star.svg" className=" h-4" />
-          <img src="images/star.svg" className=" h-4" />
+          <img src="images/star.svg" alt="star icon" className=" h-4  " />
+          <img src="images/star.svg" alt="star icon" className="h-4 " />
+          <img src="images/star.svg" alt="star icon" className=" h-4" />
+          <img src="images/star.svg" alt="star icon" className=" h-4" />
+          <img src="images/star.svg" alt="star icon" className=" h-4" />
           <a
-            href="#"
+            href="/"
             className="text-UrlBlue hover:border-UrlBlue border-b border-transparent"
           >
             1176 Reviews
@@ -85,7 +85,7 @@ const SellerCardDescriptions = () => {
         </div>
 
         <div className="flex mt-2 items-center md:justify-start  ">
-          <img src="images/ca.svg" className=" h-4   " />
+          <img src="images/ca.svg" alt="canada icon" className=" h-4   " />
           <p className=" pl-2 "> Canada</p>
         </div>
 

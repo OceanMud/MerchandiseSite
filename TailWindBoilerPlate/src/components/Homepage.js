@@ -5,7 +5,11 @@ const Homepage = () => {
   return (
     <div className=" bg-gray-50">
       <div className="flex relative  max-w-max-w-screen-3xl mx-auto ">
-        <img src="/images/Hero5.png" className="w-full h-1/3  object-cover  " />
+        <img
+          src="/images/Hero5.png"
+          alt="SellerPage"
+          className="w-full h-1/3  object-cover  "
+        />
         <div className=" flex flex-col w-3/4 h-2/5 justify-center items-center  mr-10 sm:mr-0   absolute">
           <p className="  text-gray-100 tracking-wider font-bold lg:text-6xl md:text-4xl sm:text-3xl text-2xl text-shadow-xl ">
             5 STAR STYLE
@@ -26,9 +30,17 @@ const Homepage = () => {
       </div>
 
       <div className="flex relative  max-w-max-w-screen-3xl mx-auto  ">
-        <img src="/images/Hero6.png" className="w-full h-1/3  object-cover " />
+        <img
+          src="/images/Hero6.png"
+          alt="SellerPage"
+          className="w-full h-1/3  object-cover "
+        />
         <div className=" flex flex-col w-full justify-center bottom-20 items-center absolute">
-          <img src="images/Headertext3.png" className="w-3/4 " />
+          <img
+            src="images/Headertext3.png"
+            alt="SellerPage"
+            className="w-3/4 "
+          />
           <br />
           <Link
             to="SellerCard"
@@ -43,18 +55,22 @@ const Homepage = () => {
         <div className="xl:flex grid gap-4 md:grid-cols-2 grid-cols-1 ">
           <img
             src="/images/minihero1.png"
+            alt="Modeling Clothes"
             className=" h-96 border-gray-700 border-2 "
           />
           <img
             src="/images/minihero2.png"
+            alt="Modeling Clothes"
             className=" h-96 border-gray-700 border-2"
           />
           <img
             src="/images/minihero3.png"
+            alt="Modeling Clothes"
             className=" h-96 border-gray-700  border-2"
           />
           <img
             src="/images/minihero4.png"
+            alt="Modeling Clothes"
             className=" h-96 border-gray-700 border-2"
           />
         </div>
@@ -79,14 +95,17 @@ const Homepage = () => {
       <div className="flex relative  max-w-max-w-screen-3xl   mx-auto -mb-20 ">
         <img
           src="/images/HeroGif.gif"
+          alt="Showcasing Mug"
           className="w-full h-1/3  object-cover  "
         />
         <img
           src="/images/Headertext1.png"
+          alt="60% Off Sale"
           className="absolute bottom-32 right-3 filter drop-shadow-2xl transform  -rotate-12 w-1/2"
         />
         <img
           src="/images/Headertext2.png"
+          alt="60% Off Sale"
           className="absolute bottom-20 right-1 filter drop-shadow-2xl transform  -rotate-12 w-1/2"
         />
         <Link

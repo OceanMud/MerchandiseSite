@@ -69,7 +69,7 @@ const DescriptionTabs = () => {
             <br />
             <p>
               Follow our
-              <a href="#" className=" px-1 text-UrlBlue">
+              <a href="/" className=" px-1 text-UrlBlue">
                 care instructions
               </a>
               to look after your custom printed products.

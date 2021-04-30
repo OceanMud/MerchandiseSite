@@ -8,12 +8,13 @@ import "swiper/components/scrollbar/scrollbar.scss";
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
-export default () => {
+const SellerPageNavigation = () => {
   const slide1 = () => (
     <div className="  mx-auto text-lg  max-w-md">
       <div className="flex  mt-6 border-b border-gray-300 pb-2  ">
         <img
           src="images/hanger.svg"
+          alt="hanger icon"
           className=" h-9 filter  contrast-50 pr-4  "
         />
         <h1 className="text-xl  font-bold mr-8  ">Style and fit</h1>
@@ -36,6 +37,7 @@ export default () => {
       <div className="flex  mt-6   border-b border-gray-300 pb-2   ">
         <img
           src="images/palette.svg"
+          alt="Palette icon"
           className=" h-9 filter contrast-50 pr-4  "
         />
         <h1 className="text-xl font-extrabold">Material</h1>
@@ -79,7 +81,11 @@ export default () => {
   const slide3 = () => (
     <div className="mx-auto text-lg   max-w-md">
       <div className="flex border-b border-gray-300 pb-2 mt-6">
-        <img src="images/iron.svg" className=" h-9 filter contrast-50 pr-4  " />
+        <img
+          src="images/iron.svg"
+          alt="iron icon"
+          className=" h-9 filter contrast-50 pr-4  "
+        />
         <h1 className="text-xl font-bold ">Features</h1>
       </div>
       <div className="mb-4 mt-2  ">
@@ -119,3 +125,5 @@ export default () => {
     </Swiper>
   );
 };
+
+export default SellerPageNavigation;

@@ -17,7 +17,7 @@ const SellerCard = () => {
         <div>
           <div className=" flex space-x-2 pt-4 pl-12 max-w-screen-2xl mx-auto text-sm  pb-4  ">
             <a
-              href="#"
+              href="/"
               className=" text-UrlBlue tracking-wide   hover:border-UrlBlue border-b border-transparent  "
             >
               Products
@@ -25,7 +25,7 @@ const SellerCard = () => {
             <span> / </span>
 
             <a
-              href="#"
+              href="/"
               className=" text-UrlBlue tracking-wide hover:border-UrlBlue border-b border-transparent  "
             >
               Men's
@@ -33,14 +33,14 @@ const SellerCard = () => {
 
             <span> / </span>
             <a
-              href="#"
+              href="/"
               className=" text-UrlBlue tracking-wide hover:border-UrlBlue border-b border-transparent "
             >
               Shirts
             </a>
             <span> / </span>
             <a
-              href="#"
+              href="/"
               className=" text-UrlBlue tracking-wide hover:border-UrlBlue border-b border-transparent whitespace-nowrap "
             >
               T-Shirts

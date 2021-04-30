@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useRef } from "react";
+import React, { useState, useRef } from "react";
 import MobileSearchBar from "./MobileSearchBar";
 import ProductsDropdown from "./ProductsDropdown";
 import StreamerDropdown from "./StreamerDropdown";
@@ -40,7 +40,7 @@ const BottomHeader = () => {
       >
         <div className="  max-w-screen-2xl mx-auto pl-12 pr-4 pb-4 space-x-5 text-sm mt-4   text-gray-500 hidden md:block">
           <a
-            href="# "
+            href="/"
             className="hover:text-gray-900 group"
             onMouseEnter={() => {
               setDropDown(1);
@@ -53,12 +53,13 @@ const BottomHeader = () => {
           >
             Products
             <img
-              className="xl:h-6 transform transition  group-hover:-rotate-180 ease-in-out duration-300 hidden filter contrast-0   md:inline-block h-5  "
               src="/images/arrow.svg"
+              alt="magnify icon"
+              className="xl:h-6 transform transition  group-hover:-rotate-180 ease-in-out duration-300 hidden filter contrast-0   md:inline-block h-5  "
             />
           </a>
           <a
-            href="#"
+            href="/"
             className="hover:text-gray-900 group "
             onMouseEnter={() => {
               setDropDown(2);
@@ -70,19 +71,21 @@ const BottomHeader = () => {
           >
             Streamers
             <img
-              className="xl:h-6 transform transition  group-hover:-rotate-180 ease-in-out duration-300 hidden filter contrast-0   md:inline-block h-5  "
               src="/images/arrow.svg"
+              alt="arrow svg"
+              className="xl:h-6 transform transition  group-hover:-rotate-180 ease-in-out duration-300 hidden filter contrast-0   md:inline-block h-5  "
             />
           </a>
-          <a href="#" className="hover:text-gray-900 group">
+          <a href="/" className="hover:text-gray-900 group">
             Articles
             <img
-              className="xl:h-6 transform transition  group-hover:-rotate-180 ease-in-out duration-300 hidden filter contrast-0   md:inline-block h-5  "
               src="/images/arrow.svg"
+              alt="arrow svg"
+              className="xl:h-6 transform transition  group-hover:-rotate-180 ease-in-out duration-300 hidden filter contrast-0   md:inline-block h-5  "
             />
           </a>
           <a
-            href="#"
+            href="/"
             className="hover:text-gray-900 group "
             onMouseEnter={() => {
               setDropDown(4);
@@ -94,18 +97,20 @@ const BottomHeader = () => {
           >
             Meta Reports
             <img
-              className="xl:h-6 transform transition  group-hover:-rotate-180 ease-in-out duration-300 hidden filter contrast-0   md:inline-block h-5  "
               src="/images/arrow.svg"
+              alt="arrow svg"
+              className="xl:h-6 transform transition  group-hover:-rotate-180 ease-in-out duration-300 hidden filter contrast-0   md:inline-block h-5  "
             />
           </a>
-          <a href="#" className="hover:text-gray-900">
+          <a href="/" className="hover:text-gray-900">
             Card Database
           </a>
-          <a href="#" className="hover:text-gray-900 group">
+          <a href="/" className="hover:text-gray-900 group">
             Resources
             <img
-              className="xl:h-6 transform transition  group-hover:-rotate-180 ease-in-out duration-300 hidden filter contrast-0   md:inline-block h-5  "
               src="/images/arrow.svg"
+              alt="arrow svg"
+              className="xl:h-6 transform transition  group-hover:-rotate-180 ease-in-out duration-300 hidden filter contrast-0   md:inline-block h-5  "
             />
           </a>
         </div>

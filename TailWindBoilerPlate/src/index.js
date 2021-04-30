@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import "./styles/index.css";
 import UserContext from "./components/UserContext";
+import { rehydrate } from "./components/rehydrate";
+
 import AppRouter from "./components/routers/AppRouter";
 import reportWebVitals from "./reportWebVitals";
 
@@ -15,6 +17,10 @@ const Context = () => {
   const [jsonToken, setJsonToken] = useState("");
   const [sideMenu, setSideMenu] = useState(false);
   const [transition, setTransition] = useState("-translate-x-96");
+
+  useEffect(() => {
+    setJsonToken(rehydrate());
+  }, []);
 
   return (
     <React.StrictMode>

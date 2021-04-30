@@ -22,18 +22,30 @@ const NewsLetter = () => {
         </div>
         <div className="flex justify-between">
           <div className="flex space-x-1">
-            <img src="images/visa.svg" className=" h-6 " />
-            <img src="images/mastercard.svg" className=" h-6 " />
-            <img src="images/american-express.svg" className=" h-6 " />
-            <img src="images/paypal.svg" className=" h-6 " />
-            <img src="images/discover.svg" className=" h-6 " />
-            <img src="images/jcb.svg" className=" h-6 " />
+            <img src="images/visa.svg" className=" h-6 " alt="Visa" />
+            <img
+              src="images/mastercard.svg"
+              className=" h-6 "
+              alt="Mastercard"
+            />
+            <img
+              src="images/american-express.svg"
+              alt="American-Express"
+              className=" h-6 "
+            />
+            <img src="images/paypal.svg" alt="paypal" className=" h-6 " />
+            <img src="images/discover.svg" alt="discover" className=" h-6 " />
+            <img src="images/jcb.svg" alt="jcb" className=" h-6 " />
           </div>
           <div className="flex space-x-1">
-            <img src="images/usps.svg" className=" h-6 " />
-            <img src="images/dhl.svg" className=" h-6 " />
-            <img src="images/fedex.png" className=" h-6 " />
-            <img src="images/asendia.png" className=" h-6 overflow-hidden " />
+            <img src="images/usps.svg" alt="usps" className=" h-6 " />
+            <img src="images/dhl.svg" alt="dhl" className=" h-6 " />
+            <img src="images/fedex.png" alt="fedex" className=" h-6 " />
+            <img
+              src="images/asendia.png"
+              alt="asendia"
+              className=" h-6 overflow-hidden "
+            />
           </div>
         </div>
       </div>

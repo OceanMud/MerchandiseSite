@@ -23,6 +23,7 @@ const SellerCardImages = () => {
   const slide1 = () => (
     <img
       src={images[inHover]}
+      alt="Person Wearing Clothes"
       className="lg:h-auto md:h-96 md:w-auto  w-full max-w-md mx-auto "
     />
   );
@@ -30,6 +31,7 @@ const SellerCardImages = () => {
   const slide2 = () => (
     <img
       src={images[inHover]}
+      alt="Person Wearing Clothes"
       className="lg:h-auto md:h-96 md:w-auto w-full max-w-md mx-auto "
     />
   );
@@ -37,12 +39,14 @@ const SellerCardImages = () => {
   const slide3 = () => (
     <img
       src={images[inHover]}
+      alt="Person Wearing Clothes"
       className="lg:h-auto md:h-96 md:w-auto w-full max-w-md mx-auto "
     />
   );
   const slide4 = () => (
     <img
       src={images[inHover]}
+      alt="Person Wearing Clothes"
       className="lg:h-auto md:h-96 md:w-auto w-full max-w-md mx-auto "
     />
   );
@@ -53,21 +57,25 @@ const SellerCardImages = () => {
         <div className=" space-y-3 md:flex md:flex-col md:items-center hidden  flex-1  ">
           <img
             src="images/model0.jpg"
+            alt="Person Wearing Clothes"
             className=" h-36 w-24 hover:border-red-500 border-b-4"
             onMouseEnter={() => setInHover(0)}
           />
           <img
             src="images/model0-1.png"
+            alt="Person Wearing Clothes"
             className="  h-36 w-24  hover:border-red-500 border-b-4  "
             onMouseEnter={() => setInHover(1)}
           />
           <img
             src="images/model0-2.png"
+            alt="Person Wearing Clothes"
             className=" h-36 w-24  hover:border-red-500 border-b-4  "
             onMouseEnter={() => setInHover(2)}
           />
           <img
             src="images/model0-3.png"
+            alt="Person Wearing Clothes"
             className="  h-36 w-24 hover:border-red-500 border-b-4 "
             onMouseEnter={() => setInHover(3)}
           />

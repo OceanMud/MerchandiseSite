@@ -1,23 +1,28 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { history } from "../routers/AppRouter";
+import history from "../routers/History";
 import UserContext from "../UserContext";
 import axios from "axios";
+import { setStorage } from "../rehydrate";
 
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { userInfo, setUserInfo } = useContext(UserContext);
-  const { oldPassword, setOldPassword } = useContext(UserContext);
-  const { jsonToken, setJsonToken } = useContext(UserContext);
+  const { setUserInfo } = useContext(UserContext);
+  const { setOldPassword } = useContext(UserContext);
+  const { setJsonToken } = useContext(UserContext);
 
   return (
     <div className="lg:grid lg:grid-cols-2  ">
       <div className="p-20 pt-0  ">
         <div className="text-xs font-bold mt-32 space-y-2 lg:w-auto  w-96  mx-auto  ">
           <Link to="/">
-            <img src="/images/logo.svg" className="h-16 lg:-mt-10 mb-20" />
+            <img
+              src="/images/logo.svg"
+              alt="GwentGear Logo"
+              className="h-16 lg:-mt-10 mb-20"
+            />
           </Link>
           <div className="">
             <h1 className="text-2xl font-semibold mb-10  ">
@@ -64,7 +69,7 @@ const Signup = () => {
                       });
                       setJsonToken(response.data.token);
                       console.log(response);
-
+                      setStorage(response.data.token);
                       history.push("/dashboard");
                     } else {
                       throw new Error("Error");
@@ -84,14 +89,14 @@ const Signup = () => {
                 <input type="checkbox" className="mr-2  focus:ring-0" /> I agree
                 to GwentGear's
                 <a
-                  href="#"
+                  href="/"
                   className="text-UrlBlue mx-1  border-b border-transparent hover:border-UrlBlue "
                 >
                   Terms of Service
                 </a>
                 and
                 <a
-                  href="#"
+                  href="/"
                   className="text-UrlBlue ml-1  border-b border-transparent hover:border-UrlBlue "
                 >
                   Privacy Policy
@@ -102,14 +107,14 @@ const Signup = () => {
           </div>
           <div className=" text-sm font-normal flex space-x-2 text-gray-600">
             <a
-              href="#"
+              href="/"
               className="border-b border-transparent hover:border-gray-600"
             >
               Sign in
             </a>
             <p>·</p>
             <a
-              href="#"
+              href="/"
               className="border-b border-transparent hover:border-gray-600"
             >
               Forgot password?
@@ -121,6 +126,7 @@ const Signup = () => {
       <div className="border-l border-gray-300 hidden lg:block">
         <img
           src="/images/signup-splash.jpg"
+          alt="Signup Splash"
           className="h-screen w-full  object-cover"
         />
       </div>

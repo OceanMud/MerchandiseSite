@@ -3,14 +3,14 @@ import axios from "axios";
 import UserContext from "../UserContext";
 
 const Settings = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [changePassword, setChangePassword] = useState("");
   const [error, setError] = useState("");
   const { oldPassword, setOldPassword } = useContext(UserContext);
   const { userInfo, setUserInfo } = useContext(UserContext);
-  const { jsonToken, setJsonToken } = useContext(UserContext);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const { jsonToken } = useContext(UserContext);
 
   let checkPassword = oldPassword;
 

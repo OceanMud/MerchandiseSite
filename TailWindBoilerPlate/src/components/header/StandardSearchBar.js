@@ -7,6 +7,7 @@ const StandardSearchBar = () => (
     />
     <img
       src="images/magnify.svg"
+      alt="magnify icon"
       className=" absolute inset-0  filter contrast-0  group-hover:contrast-100 inline-block w-6 ml-2 xl:left-40 left-10 top-2"
     />
   </div>

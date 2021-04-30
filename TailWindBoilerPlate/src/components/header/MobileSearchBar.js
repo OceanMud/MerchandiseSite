@@ -13,6 +13,7 @@ const MobileSearchBar = () => {
       />
       <img
         src="images/magnify.svg"
+        alt="magnify icon"
         className=" absolute inset-0  filter contrast-0  group-hover:contrast-100 inline-block w-5 ml-2  left-4 top-5
          "
       />

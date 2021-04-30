@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import UserContext from "../UserContext";
 import { Link } from "react-router-dom";
-import { history } from "../routers/AppRouter";
+import history from "../routers/History";
 import MobilePopout from "./MobilePopout";
 import axios from "axios";
 
@@ -11,10 +11,10 @@ import StandardSearchBar from "./StandardSearchBar";
 
 const TopHeader = () => {
   const [login, setLogin] = useState(false); // Signin/Signup -> Account/logout
-  const { userInfo, setUserInfo } = useContext(UserContext); // Check login Status
-  const { jsonToken, setJsonToken } = useContext(UserContext); // Save for Account
+  const { userInfo } = useContext(UserContext); // Check login Status
+  const { jsonToken } = useContext(UserContext); // Save for Account
   const { sideMenu, setSideMenu } = useContext(UserContext); // Shows Mobile
-  const { transition, setTransition } = useContext(UserContext); // Pops Out Mobile
+  const { setTransition } = useContext(UserContext); // Pops Out Mobile
 
   useEffect(() => {
     if (userInfo) {
@@ -34,25 +34,23 @@ const TopHeader = () => {
   };
 
   const logoutCheck = () => {
-    {
-      const config = {
-        headers: { Authorization: `Bearer ${jsonToken}` },
-      };
+    const config = {
+      headers: { Authorization: `Bearer ${jsonToken}` },
+    };
 
-      axios
-        .post("http://localhost:3001/users/logout", {}, config)
-        .then(function (response) {
-          if (response.status === 200) {
-            setLogin(false);
-            history.push("/");
-          } else {
-            throw new Error("Error");
-          }
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    }
+    axios
+      .post("http://localhost:3001/users/logout", {}, config)
+      .then(function (response) {
+        if (response.status === 200) {
+          setLogin(false);
+          history.push("/");
+        } else {
+          throw new Error("Error");
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   return (
@@ -64,8 +62,9 @@ const TopHeader = () => {
           {/*Menu SVG + Determines if SideMenu should popout */}
           <div onClick={() => mobileCheck()} className="cursor-pointer group">
             <img
-              className=" md:hidden block h-6 filter contrast-0 group-hover:contrast-75"
               src="/images/menu.svg"
+              alt="menu icon"
+              className=" md:hidden block h-6 filter contrast-0 group-hover:contrast-75"
             />
             <p className=" md:hidden text-xs group-hover:text-gray-900  ">
               menu
@@ -75,17 +74,19 @@ const TopHeader = () => {
           <div className="flex w-full items-center justify-center  ">
             <Link to="/">
               <img
-                className="xl:h-14  pl-24 md:pl-0 md:object-center h-10 "
                 src="/images/logo.svg"
+                alt="gwentgear logo"
+                className="xl:h-14  pl-24 md:pl-0 md:object-center h-10 "
               />
             </Link>
           </div>
           <StandardSearchBar />
         </div>
         <div className=" text-sm flex items-center space-x-4 flex-shrink-0   ">
-          <a href="#" className=" group  flex items-center ">
+          <a href="/" className=" group  flex items-center ">
             <img
               src="images/world.svg"
+              alt="preferences icon"
               className=" hidden  filter contrast-0  group-hover:contrast-100 md:inline-block w-5"
             />
             <span className="group-hover:text-gray-900 align-baseline hidden md:inline-block ">
@@ -96,6 +97,7 @@ const TopHeader = () => {
             <Link to="/signin" className="group  flex items-center ">
               <img
                 src="images/user.svg"
+                alt="user icon"
                 className="  filter contrast-0  group-hover:contrast-100  inline-block w-5"
               />
               <span className="group-hover:text-gray-900 hidden md:inline-block ">
@@ -106,10 +108,11 @@ const TopHeader = () => {
             <Link to="/dashboard" className="group  flex items-center">
               <img
                 src="images/account.svg"
+                alt="account icon"
                 className="  filter contrast-0  group-hover:contrast-100  inline-block w-5"
               />
               <p className=" group-hover:text-gray-900 hidden md:inline-block ">
-                Account
+                {userInfo.name}
               </p>
             </Link>
           )}
@@ -117,6 +120,7 @@ const TopHeader = () => {
             <Link to="signup" className="group  flex items-center">
               <img
                 src="images/user-add.svg"
+                alt="signup icon"
                 className="  filter contrast-0  group-hover:contrast-100 inline-block w-5  "
               />
               <span className="group-hover:text-gray-900 align-baseline hidden md:inline-block ">
@@ -130,6 +134,7 @@ const TopHeader = () => {
             >
               <img
                 src="images/logout.svg"
+                alt="logout icon"
                 className="  filter contrast-0  group-hover:contrast-100 inline-block w-5"
               />
               <span className="group-hover:text-gray-900 align-baseline hidden md:inline-block ">
@@ -140,6 +145,7 @@ const TopHeader = () => {
           <Link to="/dashboard" className=" flex items-center">
             <img
               src="images/cart.svg"
+              alt="cart icon"
               className="filter contrast-0   inline-block w-5  "
             />
             <span className="align-baseline hidden md:inline-block">

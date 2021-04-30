@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import UserContext from "../UserContext";
 
 const MobilePopout = () => {
@@ -24,38 +24,39 @@ const MobilePopout = () => {
                 }}
               >
                 <img
-                  className=" filter contrast-0   object-center h-6 "
                   src="/images/close.svg"
+                  alt="close icon"
+                  className=" filter contrast-0   object-center h-6 "
                 />
                 close
               </p>
             </div>
             <div className=" text-sm p-2 flex flex-col space-y-6 text-gray-700  ">
-              <a href="#" className=" hover:text-gray-900">
+              <a href="/" className=" hover:text-gray-900">
                 Home
               </a>
-              <a href="#" className="hover:text-gray-900">
+              <a href="/" className="hover:text-gray-900">
                 Products
               </a>
-              <a href="#" className="hover:text-gray-900">
+              <a href="/" className="hover:text-gray-900">
                 Services
               </a>
-              <a href="#" className="hover:text-gray-900">
+              <a href="/" className="hover:text-gray-900">
                 Integrations
               </a>
-              <a href="#" className="hover:text-gray-900">
+              <a href="/" className="hover:text-gray-900">
                 How it works
               </a>
-              <a href="#" className="hover:text-gray-900">
+              <a href="/" className="hover:text-gray-900">
                 Mockup Generator
               </a>
-              <a href="#" className="hover:text-gray-900">
+              <a href="/" className="hover:text-gray-900">
                 Resources
               </a>
             </div>
             <div className="flex  items-center px-2  flex-col">
               <a
-                href="#"
+                href="/"
                 className="bg-red-600 w-full hover:shadow-lg hover:border-black border
         
            text-white  font-semibold text-sm text-center py-2 rounded-md mt-2 mb-2  "
@@ -63,7 +64,7 @@ const MobilePopout = () => {
                 Sign Up
               </a>
               <a
-                href="#"
+                href="/"
                 className="bg-gray-300 w-full border hover:shadow-md hover:border-black  font-semibold text-sm text-center text-gray-900 py-2 rounded-md mb-2 "
               >
                 Sign In

@@ -50,7 +50,7 @@ const Checkout = () => {
               <p className="text-gray-900 font-bold">$7.95</p>
             </div>
             <a
-              href="#"
+              href="/"
               className="bg-red-600 w-full hover:shadow-lg  hover:border-black border
                   
                      text-white  font-semibold  text-base  text-center py-3 rounded-md   "

@@ -11,6 +11,7 @@ const InformationBar = () => {
               <div className="flex items-center  border-b border-gray-300 pb-2  ">
                 <img
                   src="images/hanger.svg"
+                  alt="hanger"
                   className=" h-9 filter  contrast-50 pr-4  "
                 />
                 <h1 className="text-xl font-bold">Style and fit</h1>
@@ -35,6 +36,7 @@ const InformationBar = () => {
               <div className="flex items-center  border-b border-gray-300 pb-2   ">
                 <img
                   src="images/palette.svg"
+                  alt="palette"
                   className=" h-9 filter contrast-50 pr-4   "
                 />
                 <h1 className="text-xl font-bold">Material</h1>
@@ -82,6 +84,7 @@ const InformationBar = () => {
               <div className="flex items-center border-b border-gray-300 pb-2">
                 <img
                   src="images/iron.svg"
+                  alt="iron icon"
                   className=" h-9 filter contrast-50 pr-4  "
                 />
                 <h1 className="text-xl font-bold ">Features</h1>
