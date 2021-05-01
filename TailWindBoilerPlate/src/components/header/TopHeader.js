@@ -3,7 +3,7 @@ import UserContext from "../UserContext";
 import { Link } from "react-router-dom";
 import history from "../routers/History";
 import MobilePopout from "./MobilePopout";
-import axios from "axios";
+import { checkLogout } from "../account/utils";
 
 import StandardSearchBar from "./StandardSearchBar";
 
@@ -11,15 +11,20 @@ import StandardSearchBar from "./StandardSearchBar";
 
 const TopHeader = () => {
   const [login, setLogin] = useState(false); // Signin/Signup -> Account/logout
-  const { userInfo } = useContext(UserContext); // Check login Status
-  const { jsonToken } = useContext(UserContext); // Save for Account
+
+  const { userInfo, setUserInfo } = useContext(UserContext); // Check login Status
+
   const { sideMenu, setSideMenu } = useContext(UserContext); // Shows Mobile
   const { setTransition } = useContext(UserContext); // Pops Out Mobile
 
   useEffect(() => {
+    console.log(userInfo);
     if (userInfo) {
       setLogin(true);
+    } else {
+      setLogin(false);
     }
+
     return () => {};
   }, [userInfo]);
 
@@ -33,23 +38,17 @@ const TopHeader = () => {
     }
   };
 
-  const logoutCheck = () => {
-    const config = {
-      headers: { Authorization: `Bearer ${jsonToken}` },
-    };
+  const initializeLogout = () => {
+    const results = async () => await checkLogout(userInfo.token);
 
-    axios
-      .post("http://localhost:3001/users/logout", {}, config)
-      .then(function (response) {
-        if (response.status === 200) {
-          setLogin(false);
-          history.push("/");
-        } else {
-          throw new Error("Error");
-        }
+    results()
+      .then((result) => {
+        console.log("success Logout", result);
+        setUserInfo("");
+        history.push("/");
       })
-      .catch(function (error) {
-        console.log(error);
+      .catch((e) => {
+        console.log(e);
       });
   };
 
@@ -130,7 +129,7 @@ const TopHeader = () => {
           ) : (
             <div
               className="group  flex items-center"
-              onClick={() => logoutCheck()}
+              onClick={() => initializeLogout()}
             >
               <img
                 src="images/logout.svg"

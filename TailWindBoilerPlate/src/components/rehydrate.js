@@ -1,16 +1,34 @@
-const rehydrate = () => {
-  const data = JSON.parse(sessionStorage.getItem("token"));
+import { getProfile } from "./account/utils";
 
-  if (data === null) {
-    console.log("data", data);
+const rehydrate = async () => {
+  const token = await JSON.parse(sessionStorage.getItem("token"));
+
+  if (token === null) {
     return "";
-  } else {
-    console.log("data", data);
-    return data;
   }
+
+  const results = async () => await getProfile(token);
+
+  return results()
+    .then((result) => {
+      return {
+        name: result.name,
+        email: result.email,
+        token,
+      };
+    })
+    .catch((e) => {
+      console.log(e);
+      return;
+    });
 };
 
 const setStorage = (data) => {
+  if (!data) {
+    sessionStorage.clear();
+    return;
+  }
+
   sessionStorage.setItem("token", JSON.stringify(data));
 };
 

@@ -7,20 +7,19 @@ import UserContext from "../UserContext";
 const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { setOldPassword } = useContext(UserContext);
+
   const { setUserInfo } = useContext(UserContext);
-  const { setJsonToken } = useContext(UserContext);
 
   const initializeSignin = () => {
     const results = async () => await checkSignin(email, password);
     results()
       .then((result) => {
-        console.log(result.name);
         setUserInfo({
           name: result.name,
           email: result.email,
+          token: result.token,
         });
-        setJsonToken(result.jsonToken);
+
         history.push("/dashboard");
       })
       .catch((e) => {
@@ -59,7 +58,6 @@ const Signin = () => {
             value={password}
             onChange={(e) => {
               setPassword(e.target.value);
-              setOldPassword(e.target.value);
             }}
           />
           <div className="border-gray-200 border-b lg:w-96 w-72 ">

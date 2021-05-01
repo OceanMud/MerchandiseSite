@@ -1,22 +1,22 @@
 import React, { useState, useEffect, useContext } from "react";
-import axios from "axios";
 import UserContext from "../UserContext";
+import { editAccount } from "../account/utils";
 
 const Settings = () => {
-  const [password, setPassword] = useState("");
-  const [changePassword, setChangePassword] = useState("");
-  const [error, setError] = useState("");
-  const { oldPassword, setOldPassword } = useContext(UserContext);
-  const { userInfo, setUserInfo } = useContext(UserContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const { jsonToken } = useContext(UserContext);
+  const [password, setPassword] = useState("");
+  const [oldPassword, setOldPassword] = useState("");
 
-  let checkPassword = oldPassword;
+  const [error, setError] = useState("");
+  const { userInfo, setUserInfo } = useContext(UserContext);
 
   useEffect(() => {
     setName(userInfo.name);
     setEmail(userInfo.email);
+    console.log(userInfo);
+
+    return () => {};
   }, []);
 
   return (
@@ -55,9 +55,9 @@ const Settings = () => {
         <p className="text-sm text-gray-700 mt-3">OLD PASSWORD</p>
         <input
           type="text"
-          value={changePassword}
+          value={oldPassword}
           className=" px-0 pt-0 font-semibold text-xl w-full border-0 focus:ring-0  border-b outline-none  border-black"
-          onChange={(e) => setChangePassword(e.target.value)}
+          onChange={(e) => setOldPassword(e.target.value)}
         />
 
         <p className="text-xs mt-3">
@@ -68,48 +68,28 @@ const Settings = () => {
         <div
           className="flex justify-center bg-red-600 mb-4 font-semibold text-sm rounded-md text-white mt-6 px-5 py-2 lg:w-auto hover:bg-red-700 cursor-pointer  "
           onClick={() => {
-            if (changePassword !== oldPassword) {
-              return setError("Old Password Failed");
-            }
+            const results = async () =>
+              await editAccount(
+                name,
+                email,
+                password,
+                oldPassword,
+                userInfo.token
+              );
 
-            const config = {
-              headers: { Authorization: `Bearer ${jsonToken}` },
-            };
-
-            if (password.length === 0) {
-              checkPassword = oldPassword;
-            } else {
-              checkPassword = password;
-            }
-
-            axios
-              .patch(
-                "http://localhost:3001/users/me",
-                {
-                  name,
-                  email,
-                  password: checkPassword,
-                },
-                config
-              )
-              .then(function (response) {
-                if (response.status === 200) {
-                  if (password.length !== 0) {
-                    setOldPassword(password);
-                  }
-                  setUserInfo({
-                    name: response.data.name,
-                    email: response.data.email,
-                  });
-                  console.log(response);
-                  setError("Settings Changed Successfully!");
-                } else {
-                  throw new Error("Error");
-                }
+            results()
+              .then((result) => {
+                setUserInfo({
+                  name: result.name,
+                  email: result.email,
+                  token: userInfo.token,
+                });
+                console.log(userInfo);
               })
-              .catch(function (error) {
-                console.log(error);
+              .catch((e) => {
+                console.log(e);
               });
+            setError("Settings Changed Successfully!");
           }}
         >
           SAVE SETTINGS

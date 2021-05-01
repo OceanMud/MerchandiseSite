@@ -14,13 +14,27 @@ axios.defaults.withCredentials = true;
 const Context = () => {
   const [userInfo, setUserInfo] = useState("");
   const [oldPassword, setOldPassword] = useState("");
-  const [jsonToken, setJsonToken] = useState("");
+  const [loading, setLoading] = useState(false);
   const [sideMenu, setSideMenu] = useState(false);
   const [transition, setTransition] = useState("-translate-x-96");
 
   useEffect(() => {
-    setJsonToken(rehydrate());
+    loadAccount();
   }, []);
+
+  const loadAccount = () => {
+    const results = async () => await rehydrate();
+
+    results()
+      .then((result) => {
+        setUserInfo(result);
+        setLoading(true);
+      })
+      .catch((e) => {
+        console.log(e);
+        setLoading(true);
+      });
+  };
 
   return (
     <React.StrictMode>
@@ -30,15 +44,13 @@ const Context = () => {
           setUserInfo,
           oldPassword,
           setOldPassword,
-          jsonToken,
-          setJsonToken,
           sideMenu,
           setSideMenu,
           transition,
           setTransition,
         }}
       >
-        <AppRouter />
+        {!loading ? undefined : <AppRouter />}
       </UserContext.Provider>
     </React.StrictMode>
   );
